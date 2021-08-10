@@ -1,5 +1,5 @@
 # Personal Dotfiles
-Here is a collection of my dotfiles that tries to integrate the Gruvbox theme (dark) as much as possible. There's configuration for Sway, Waybar, Kitty, and Spicetify (Spotify, theme is OnePunch Dark).
+Here is a collection of my dotfiles that tries to integrate the Gruvbox theme (dark) as much as possible. There's configuration for Sway, Waybar, Kitty, and Spicetify (Spotify, theme is OnePunch Dark). Also added theme for ncspot (Spotify alternative).
 Get a good browser theme and GTK theme and you're all set.
 
 ### Screenshots
