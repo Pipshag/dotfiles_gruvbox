@@ -1,0 +1,50 @@
+colordef    black       =   114     125     129
+colordef    green       =   596     592     102
+colordef    yellow      =   843     600     129
+colordef    blue        =   271     522     533
+colordef    red      =   839     364     54
+
+colordef    magenta     =   694     384     525
+
+colordef    cyan        =   408     616     416
+colordef    white       =   922     859     698
+colordef    grey        =   659     600     518
+
+
+#property       fg  bg  fx
+
+background              =   default     default
+frame                   =   default       default   
+window_title            =   black        white   reverse
+directory               =   blue        default
+selected_directory      =   blue        default   reverse
+playlist                =   green       default
+selected_playlist       =   green       default   reverse
+file                    =   white       default
+selected_file           =   white       default   reverse
+marked_file             =   cyan        default
+marked_selected_file    =   cyan        default   reverse
+marked_info             =   cyan        default
+marked_selected_info    =   cyan        default
+info                    =   red         default
+selected_info           =   red         default
+status                  =   red         default
+title                   =   blue        default
+state                   =   red         default   bold
+current_time            =   yellow      default
+time_left               =   yellow      default   reverse
+total_time              =   yellow      default   dim
+time_total_frames       =   yellow      default
+sound_parameters        =   blue        default
+legend                  =   blue        default   dim
+disabled                =   magenta     default   dim
+enabled                 =   magenta     default   bold
+empty_mixer_bar         =   grey        default   bold
+filled_mixer_bar        =   grey        default   bold,reverse
+empty_time_bar          =   red         default
+filled_time_bar         =   green         default   reverse
+entry                   =   white       default
+entry_title             =   grey        default
+error                   =   red         default   bold,standout
+message                 =   grey        default   dim
+plist_time              =   yellow      default   dim
