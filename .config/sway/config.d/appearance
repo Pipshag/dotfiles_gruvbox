@@ -1,0 +1,30 @@
+### Appearance configuration
+# Font, borders, and gaps   
+    font pango:Cantarell 9
+    smart_gaps on
+    gaps inner 0
+    gaps outer -4
+    gaps top -2
+    gaps bottom 0
+    default_border pixel 0
+    default_floating_border pixel 2
+
+    ### Gruvbox
+    set $light #ebdbb2
+    set $dark #3c3836
+    set $focused #ebdbb2
+    set $inactive #8ec07c
+    set $unfocused #689d6a
+    set $urgent #b8bb26
+
+    ### Colors (see man 5 sway)
+    # border - border around titlebar
+    # bg - titlebar background
+    # text - text on titlebar
+    # indicator - shown where new window will open
+    # child_border - border around the window
+    # class         border      bg      text    indicator   child_border
+    client.focused          $focused    $focused    $dark   $focused    $focused
+    client.focused_inactive $inactive   $inactive   $dark   $inactive   $inactive
+    client.unfocused        $unfocused  $unfocused  $light  $unfocused  $unfocused
+    client.urgent           $urgent     $urgent     $light  $urgent     $urgent

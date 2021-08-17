@@ -1,1 +1,31 @@
-/home/pipshag/Documents/Mackup/.config/ncspot/config.toml
+use_nerdfont=true
+volnorm=true
+notify=true
+bitrate=320
+
+[keybindings]
+"q" = "back"
+"." = "seek +1000"
+"," = "seek -1000"
+">" = "next"
+"<" = "previous"
+
+
+[theme]
+background = "default"
+primary = "#EBDBB2"
+secondary = "#D5C4A1"
+title = "#D65D0E"
+playing = "#83a597"
+playing_selected = "#458588"
+playing_bg = "#1D2021"
+highlight = "#D79921"
+highlight_bg = "#1D2021"
+error = "#FBF1C7"
+error_bg = "#CC241D"
+statusbar = "#282828"
+statusbar_progress = "#689D6A"
+statusbar_bg = "#98971A"
+cmdline = "#1D2021"
+cmdline_bg = "#FE8019"
+search_match = "#fabd2f"

@@ -1,0 +1,21 @@
+### Input configuration
+# For specific keyboard. Make caps - escape, toggle language with alt caps.
+input "3141:30264:AKKO_AKKO_3084BT" {
+    xkb_layout us,se
+    xkb_options caps:escape,grp:alt_caps_toggle
+    xkb_numlock enable
+    repeat_delay 200
+    repeat_rate 65
+}
+input "3141:30264:Ducky_AKKO__keyboar" {
+    xkb_layout us,se
+    xkb_options caps:escape,grp:alt_caps_toggle
+    xkb_numlock enable
+    repeat_delay 200
+    repeat_rate 65
+}
+
+# Set pointer scroll factor
+input "type:pointer" {
+  scroll_factor 2
+}

@@ -1,0 +1,23 @@
+#####################
+### PIPSHAGS SWAY ###
+#####################
+
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+# Terminal
+set $term AMD_DEBUG=nodcc kitty
+
+# App Launcher
+set $menu ulauncher
+
+# Browser
+set $webbrowser firefox
+
+# Handle waybar
+bar {
+     swaybar_command waybar
+}
+
+include ~/.config/sway/config.d/*
+include /etc/sway/config.d/*

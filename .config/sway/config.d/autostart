@@ -1,0 +1,43 @@
+### Autostart applications    
+    # Autostart applications, per workspace
+    # exec swaymsg "workspace 3; exec spotify;"
+    exec swaymsg "workspace 1; exec $term -e 'btm';"
+    exec swaymsg "exec $webbrowser;"
+    exec swaymsg "workspace 1; exec keepassxc;"
+
+## Run software
+
+    # Set environment
+    exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+    # Copy paste
+    exec wl-paste -t text --watch clipman store
+
+    # Authentication agent
+    exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+    # Import environment for D-Bus
+    exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+    # Init wobpipe for OSD audio
+    set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
+    exec_always mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
+
+    # Automatic mounts
+    exec udiskie
+
+    # Better tiling
+    exec autotiling
+
+    # Notifications
+    exec mako
+
+    # Network Manager Applet
+    exec_always nm-applet --indicator
+
+    # Shiny LEDs
+    exec openrgb --startminimized --profile default
+
+    # Indicator for KDEConnect Mobile Phone
+    exec /usr/lib/kdeconnectd -platform wayland-egl
+    exec kdeconnect-indicator

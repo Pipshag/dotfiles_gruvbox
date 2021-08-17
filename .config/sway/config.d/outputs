@@ -1,0 +1,17 @@
+### Output configuration
+# Set Displays, Refresh and VRR
+output DP-1 {
+    scale 1
+    pos 0 0
+    res 2560x1440@165.000Hz
+    adaptive_sync on
+    subpixel none
+    max_render_time 1
+}
+
+# Set background
+set $bg ~/Pictures/spacedream.jpg
+#set $bg ~/Pictures/background_sway.png
+
+## Background
+output * bg $bg fill

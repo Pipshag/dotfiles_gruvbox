@@ -1,0 +1,42 @@
+### Application special configurations
+    ## Add floating windows and inhibit idle
+    # Get app_id or class with
+    # swaymsg -t get_tree | grep
+    for_window [app_id="gnome-calculator"] floating enable
+    for_window [app_id="gnome-system-monitor"] floating enable
+    for_window [app_id="org.gnome.Nautilus"] floating enable
+    for_window [app_id="org.keepassxc.KeePassXC"] floating enable
+    for_window [class="KeePassXC"] floating enable
+    for_window [class="GitKraken"] floating enable
+    for_window [app_id="gnome-calendar"] floating enable
+    for_window [app_id="imv"] floating enable
+    for_window [app_id="powerupp"] floating enable
+    for_window [app_id="gnome-control-center"] floating enable
+    for_window [app_id="blueberry.py"] floating enable
+    for_window [app_id="calibre-gui"] floating enable
+    for_window [app_id="lutris"] floating enable
+    for_window [app_id="ulauncher"] floating enable, border none
+    for_window [app_id="mpv"] floating enable, inhibit_idle visible
+    for_window [class="Steam"] floating enable
+    for_window [class="steam_app*"] inhibit_idle visible 
+    for_window [class="dota2"] inhibit_idle visible
+    for_window [class="vosyr.exe"] floating enable
+
+    # Custom boxes
+    for_window [app_id="qrcodebox"] floating enable, resize set 280 300
+
+    ## Add opacity to unmanaged applications
+    for_window [app_id="subl"] opacity 0.95
+    for_window [app_id="kitty"] opacity 0.95
+    for_window [class="Spotify"] opacity 0.85
+
+    ##Tag xwayland windows
+    for_window [shell="xwayland"] title_format "<span>[X] %title</span>"
+
+    ## Window fixes
+    # Fix for floating window when screensharing
+    for_window [title=".*is sharing your screen."] border none
+
+    ## Assign Workspaces
+    assign [class="jetbrains-idea"] → workspace 2
+    assign [class="jetbrains-datagrip"] → workspace 2

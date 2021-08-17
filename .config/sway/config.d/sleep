@@ -1,0 +1,12 @@
+### Idle configuration
+
+# Set lockscreen background and options
+set $lock_bg ~/Pictures/BgCorrupted.png
+set $lock_opts '--effect-pixelate 10 --indicator --ring-color 4C566A --key-hl-color 4C566A --line-color 2E3440 --separator-color 5E81AC'
+
+# Add section for handling locking and sleeping
+    bindsym Alt+l exec 'swaylock -i $lock_bg'
+# Add idle managements
+exec swayidle -w \
+        timeout 600 'systemctl suspend' \
+        before-sleep 'swaylock -f -i $lock_bg'
