@@ -1,0 +1,42 @@
+{
+    "1ee4c689-a52d-4dc4-b7fa-32f3c4b5b7fb": {
+        "id": "1ee4c689-a52d-4dc4-b7fa-32f3c4b5b7fb",
+        "name": "Reboot",
+        "keyword": "Reboots computer",
+        "cmd": "systemctl reboot",
+        "icon": "/usr/share/icons/Pop/256x256/categories/cs-power.png",
+        "is_default_search": false,
+        "run_without_argument": true,
+        "added": 1628703512.2342381
+    },
+    "aa5db491-97c0-4aa8-8dd8-d191d4bc629a": {
+        "id": "aa5db491-97c0-4aa8-8dd8-d191d4bc629a",
+        "name": "Suspend",
+        "keyword": "Suspends computer",
+        "cmd": "systemctl suspend",
+        "icon": "/usr/share/icons/Pop/256x256/categories/cs-power.png",
+        "is_default_search": false,
+        "run_without_argument": true,
+        "added": 1628703630.9692664
+    },
+    "738848d2-aa40-4f42-beaa-85e4d7d92a73": {
+        "id": "738848d2-aa40-4f42-beaa-85e4d7d92a73",
+        "name": "UEFI",
+        "keyword": "Boots into UEFI",
+        "cmd": "systemctl reboot --firmware-setup",
+        "icon": "/usr/share/icons/Pop/256x256/categories/cs-power.png",
+        "is_default_search": false,
+        "run_without_argument": true,
+        "added": 1628703671.145036
+    },
+    "0d35496b-c0b2-4d04-ba90-70546d7f23df": {
+        "id": "0d35496b-c0b2-4d04-ba90-70546d7f23df",
+        "name": "Generate QR code",
+        "keyword": "qr",
+        "cmd": "#!/usr/bin/env zsh\nexec kitty --class 'qrcodebox' --hold qrencode -d 96 -m 2 -t utf8 \"$@\"",
+        "icon": "/usr/share/icons/Pop/64x64/apps/com.github.mubitosh.qrshare.svg",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1628766292.6257708
+    }
+}
