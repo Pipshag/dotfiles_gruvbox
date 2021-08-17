@@ -1,1 +1,18 @@
-/home/pipshag/Documents/Mackup/.config/mako/config
+anchor=top-center
+default-timeout=5000
+
+icons=1
+icon-path=/usr/share/icons/Paper-Mono-Dark/
+icon-location=left
+
+# Format
+
+margin=20,20
+padding=20,10
+border-size=4
+border-radius=2
+
+font=Cantarell 10
+background-color=#83a597
+border-color=#448488
+text-color=#272727
