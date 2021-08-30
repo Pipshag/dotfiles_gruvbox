@@ -39,13 +39,13 @@ get_icon () {
 }
 
 get_status() {
-    for device in $(qdbus6 --literal org.kde.kdeconnect /modules/kdeconnect org.kde.kdeconnect.daemon.devices); do
+    for device in $(qdbus --literal org.kde.kdeconnect /modules/kdeconnect org.kde.kdeconnect.daemon.devices); do
         deviceid=$(echo "$device" | awk -F'["|"]' '{print $2}')
-        isreach="$(qdbus6 org.kde.kdeconnect "/modules/kdeconnect/devices/$deviceid" org.kde.kdeconnect.device.isReachable)"
-        istrust="$(qdbus6 org.kde.kdeconnect "/modules/kdeconnect/devices/$deviceid" org.kde.kdeconnect.device.isTrusted)"
+        isreach="$(qdbus org.kde.kdeconnect "/modules/kdeconnect/devices/$deviceid" org.kde.kdeconnect.device.isReachable)"
+        istrust="$(qdbus org.kde.kdeconnect "/modules/kdeconnect/devices/$deviceid" org.kde.kdeconnect.device.isTrusted)"
         if [ "$isreach" = "true" ] && [ "$istrust" = "true" ]
         then
-            battery="$(qdbus6 org.kde.kdeconnect "/modules/kdeconnect/devices/$deviceid/battery" org.kde.kdeconnect.device.battery.charge)%"
+            battery="$(qdbus org.kde.kdeconnect "/modules/kdeconnect/devices/$deviceid/battery" org.kde.kdeconnect.device.battery.charge)%"
             icon=$(get_icon "$battery" "$devicetype")
             devices+="$battery $icon"
         elif [ "$isreach" = "false" ] && [ "$istrust" = "true" ]
@@ -58,13 +58,13 @@ get_status() {
 }
 
 send_ring() {
-    for device in $(qdbus6 --literal org.kde.kdeconnect /modules/kdeconnect org.kde.kdeconnect.daemon.devices); do
+    for device in $(qdbus --literal org.kde.kdeconnect /modules/kdeconnect org.kde.kdeconnect.daemon.devices); do
         deviceid=$(echo "$device" | awk -F'["|"]' '{print $2}')
-        isreach="$(qdbus6 org.kde.kdeconnect "/modules/kdeconnect/devices/$deviceid" org.kde.kdeconnect.device.isReachable)"
-        istrust="$(qdbus6 org.kde.kdeconnect "/modules/kdeconnect/devices/$deviceid" org.kde.kdeconnect.device.isTrusted)"
+        isreach="$(qdbus org.kde.kdeconnect "/modules/kdeconnect/devices/$deviceid" org.kde.kdeconnect.device.isReachable)"
+        istrust="$(qdbus org.kde.kdeconnect "/modules/kdeconnect/devices/$deviceid" org.kde.kdeconnect.device.isTrusted)"
         if [ "$isreach" = "true" ] && [ "$istrust" = "true" ]
         then
-            $(qdbus6 org.kde.kdeconnect "/modules/kdeconnect/devices/f50bd984d42a8497/findmyphone" org.kde.kdeconnect.device.findmyphone.ring)
+            $(qdbus org.kde.kdeconnect "/modules/kdeconnect/devices/$deviceid/findmyphone" org.kde.kdeconnect.device.findmyphone.ring)
         fi
     done
 
