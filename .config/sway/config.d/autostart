@@ -11,10 +11,11 @@
     exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
     # Copy paste
-    exec wl-paste -t text --watch clipman store
+    #exec wl-paste -t text --watch clipman store
+    exec wl-paste
 
     # Authentication agent
-    exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+    exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
     # Import environment for D-Bus
     exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
@@ -23,6 +24,9 @@
     set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
     exec_always mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 
+    # Fixes for Java (JetBrains)
+    exec wmname LG3D
+    
     # Automatic mounts
     exec udiskie
 

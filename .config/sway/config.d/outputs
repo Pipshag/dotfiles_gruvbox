@@ -6,7 +6,7 @@ output DP-1 {
     res 2560x1440@165.000Hz
     adaptive_sync on
     subpixel none
-    max_render_time 1
+    max_render_time 3
 }
 
 # Set background

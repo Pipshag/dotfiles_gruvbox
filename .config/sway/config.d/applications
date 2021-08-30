@@ -1,4 +1,10 @@
 ### Application special configurations
+
+    # Titlebars get resized when text with a different height gets picked up.
+    # This includes emoji and Hangul. This neat hack makes all titlebars higher.
+    # See https://github.com/swaywm/sway/issues/4992
+    # for_window [title=".*"] title_format %title゜
+
     ## Add floating windows and inhibit idle
     # Get app_id or class with
     # swaymsg -t get_tree | grep

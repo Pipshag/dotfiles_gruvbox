@@ -18,8 +18,11 @@
     bindsym Print exec grimshot --notify copy area
     # Edit region-select-screenshot to file
     bindsym ctrl+shift+Print exec grim -g "$(slurp)" - | swappy -f -
+    bindsym $mod+Print exec exec grim - | swappy -f -
     # Region-select-video to file
-    bindsym alt+shift+Print exec wf-recorder -g "$(slurp)"
+    bindsym shift+Pause exec wf-recorder -g "$(slurp)" -f ~/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")
+    # End video recording
+    bindsym ctrl+shift+Pause exec killall -s SIGINT wf-recorder
 
 ## Special keys
 

@@ -87,7 +87,7 @@
     background: @bg;
     color: @light;
     font-family: "Cantarell", "Font Awesome 5 Pro";
-    font-size: 0.9em;
+    font-size: 9pt;
     font-weight: bold;
 }
 
@@ -233,12 +233,12 @@
     background: @bg;
 }
 #custom-arrow4 {
-    font-size: 2em;
+    font-size: 2.1em;
     color: @font_gruv_normal;
     background: @bg;
 }
 #custom-arrow5 {
-    font-size: 2em;
+    font-size: 2.12em;
     color: @font_gruv_normal;
     background: @bg;
 }
@@ -273,6 +273,10 @@
     color: @font_gruv_normal;
 }
 #language {
+    background: @bg;
+    color: @font_gruv_normal;
+}
+#custom-kdeconnect {
     background: @bg;
     color: @font_gruv_normal;
 }
@@ -318,7 +322,8 @@
 #cpu {
     background: @bluetint;
     color: @font_gruv_normal;
-    padding-left: 0.2em;
+    padding-left: 0em;
+    padding-right: 0.2em;
 }
 #cpu.critical {
     color: @nord_dark_font;
@@ -332,18 +337,20 @@
 #temperature.critical {
     background:  @critical;
 }
+#custom-gpu {
+    background: @bluetint;
+    color: @font_gruv_normal;
+    padding-left: 0em;    
+}
 #pulseaudio {
     background: @bg;
     color: @font_gruv_normal;
 }
 #pulseaudio.muted {
-    background: #fb4833;
-    color: @font_gruv_normal;
+    color: #fb4833;
 }
 #pulseaudio.source-muted {
-    background: #fb4833;
-    color: @font_gruv_normal;
-    /* No styles */
+    /* moved to config */
 }
 #bluetooth {
     background: @bg;
@@ -382,11 +389,6 @@
     margin-right: 40px;
     margin-left: 40px;
     font-weight: normal;
-}
-#custom-gpu {
-    background: @nord_bg;
-    font-weight: bold;
-    padding: 0 0.6em;
 }
 #custom-weather {
     background: @mode;

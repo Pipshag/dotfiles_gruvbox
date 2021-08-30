@@ -9,7 +9,7 @@
 
     "modules-left": ["clock#time", "clock#date", "sway/language", "custom/arrow1", "custom/scratchpad-indicator", "custom/pacman", "custom/arrow2", "idle_inhibitor", "custom/arrow3",  "custom/playerctl"],
     "modules-center": ["custom/arrow4", "sway/workspaces", "custom/arrow5"],
-    "modules-right": ["custom/arrow6", "custom/cpugovernor", "custom/arrow7",  "temperature", "cpu", "custom/arrow8", "network", "bluetooth", "pulseaudio", "tray"],
+    "modules-right": ["custom/arrow6", "custom/cpugovernor", "custom/arrow7",  "temperature", "cpu", "custom/gpu", "custom/arrow8", "network", "custom/kdeconnect", "bluetooth", "pulseaudio", "tray"],
     
     // Modules configuration
     "sway/workspaces": {
@@ -87,13 +87,19 @@
         "tooltip": false
     },
     "cpu": {
-        "interval": "1",      
-        "format": "  {max_frequency}GHz  􏏴  {usage}%",
-        "max-length": 16,
-        "min-length": 12,
+        "interval": 5,      
+        "format": "  {max_frequency:1}GHz  􏏴  {usage:2}%",
         "on-click": "kitty -e htop --sort-key PERCENT_CPU",
         "tooltip": false
     },
+    "custom/gpu": {
+      "exec": "$HOME/.config/waybar/custom_modules/custom-gpu-lite.sh",
+      "return-type": "json",
+      "format": " {}",
+      "interval": 5,
+      "tooltip": "{tooltip}",
+      "on-click": "powerupp"
+    },     
     "network": {
         // "interface": "wlan0", // (Optional) To force the use of this interface,
         "format-wifi": "<span color=\"#ebdbb2\"></span>  {essid}",
@@ -105,16 +111,20 @@
         "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}",
         "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}"
     },
+    "custom/kdeconnect": {
+      "exec": "$HOME/.config/waybar/custom_modules/custom-kdeconnect.sh battery",
+      "format": " {}",
+      "interval": 60,
+      "on-click": "$HOME/.config/waybar/custom_modules/custom-kdeconnect.sh ring"
+    },   
     "pulseaudio": {
         "scroll-step": 3, // %, can be a float
-        "format": "{icon} {volume}%",
+        "format": "{icon} {volume:2}% {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        //"format-source": "{volume}% ",
-        //"format-source-muted": "",
         "format-source": "",
-        "format-source-muted": "",
+        "format-source-muted": "<span color=\"#fb4833\"></span>",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -141,17 +151,6 @@
         "exec": "curl 'https://wttr.in/?format=1'",
         "interval": 3600
     },
-    "custom/gpu": {
-      "exec": "$HOME/.config/waybar/custom_modules/custom-gpu.sh",
-      "return-type": "json",
-      "format": "  {}",
-      "interval": 2,
-      "tooltip": "{tooltip}",
-      "max-length": 19,
-      "min-length": 19,
-      "on-click": "powerupp"
-      
-    }, 
     "custom/cpugovernor": {
       "format": "{icon}",
       "interval": "once",
