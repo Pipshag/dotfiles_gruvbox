@@ -24,47 +24,6 @@
     # End video recording
     bindsym ctrl+shift+Pause exec killall -s SIGINT wf-recorder
 
-## Special keys
-
-     # For Akko BT 3141:30264:AKKO_AKKO_3084BT {
-        ## Volume Control
-        # Support for wob
-       bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && pamixer --get-volume > $WOBSOCK
-       bindsym XF86AudioLowerVolume exec pamixer -ud 5 && pamixer --get-volume > $WOBSOCK
-       bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $WOBSOCK ) || pamixer --get-volume > $WOBSOCK
-       bindsym XF86AudioNext exec playerctl next
-       bindsym XF86AudioPrev exec playerctl previous
-       bindsym XF86AudioPlay exec playerctl play-pause
-
-       bindcode $mod+61 exec playerctl play-pause 
-
-        # Unused media keys
-        #XF86Explorer //F1
-        #XF86Mail    //F2
-        #XF86Search  //F3
-        #XF86HomePage    //F4
-        #XF86Tools       //F5
-        bindsym XF86Calculator exec gnome-calculator //c
-     #}
-
- # For Akko 3141:30264:Ducky_AKKO__keyboar {
-
-    ## Volume Control
-    # Support for wob    
-    # bindsym XF86AudioNext exec playerctl next
-    # bindsym XF86AudioPrev exec playerctl previous
-    # bindsym XF86AudioPlay exec playerctl play-pause
-    ## Custom media keybinds
-    # $mod + .
-    # bindcode $mod+60 exec pamixer -ui 5 && pamixer --get-volume > $WOBSOCK
-    # $mod + ,
-    # bindcode $mod+59 exec pamixer -ud 5 && pamixer --get-volume > $WOBSOCK
-    # $mod + space
-    # bindcode $mod+61 exec playerctl play-pause 
-
-
-#}
-
     ## Dismiss notifications
     bindsym $mod+n exec "makoctl dismiss"
     bindsym $mod+Shift+n exec "makoctl dismiss -a"
@@ -79,7 +38,7 @@
     bindsym $mod+Return exec AMD_DEBUG=nodcc $term
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    #bindsym $mod+d exec $menu
     bindsym Control+space exec $menu
 
     # Reload the configuration file
@@ -168,4 +127,54 @@
         bindsym Escape mode "default"
     }
 
-bindsym $mod+r rmode "resize"
+    bindsym $mod+r rmode "resize"
+
+# Special keys
+
+    # For all keyboards
+    bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && pamixer --get-volume > $WOBSOCK
+    bindsym XF86AudioLowerVolume exec pamixer -ud 5 && pamixer --get-volume > $WOBSOCK
+    bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $WOBSOCK ) || pamixer --get-volume > $WOBSOCK
+    bindsym XF86AudioNext exec playerctl next
+    bindsym XF86AudioPrev exec playerctl previous
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86Calculator exec gnome-calculator
+
+    # Unused media keys
+    #XF86Explorer   //F1
+    #XF86Mail       //F2
+    #XF86Search     //F3
+    #XF86HomePage   //F4
+    #XF86Tools      //F5    
+
+# Custom Keyboards Input
+    
+    # Ducky Akko 3108 v2
+    input "3141:26131:Ducky_AKKO_3108_V2" {
+        xkb_layout us,se
+        xkb_options caps:escape,grp:alt_caps_toggle
+        xkb_numlock enable
+        repeat_delay 200
+        repeat_rate 65
+    }
+    
+    # For specific keyboard. Make caps - escape, toggle language with alt caps.
+    input "3141:30264:AKKO_AKKO_3084BT" {
+        xkb_layout us,se
+        xkb_options caps:escape,grp:alt_caps_toggle
+        xkb_numlock enable
+        repeat_delay 200
+        repeat_rate 65
+    }
+    input "3141:30264:Ducky_AKKO__keyboar" {
+        xkb_layout us,se
+        xkb_options caps:escape,grp:alt_caps_toggle
+        xkb_numlock enable
+        repeat_delay 200
+        repeat_rate 65
+    }
+
+# Set pointer scroll factor
+input "type:pointer" {
+  scroll_factor 2
+}
