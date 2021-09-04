@@ -1,7 +1,7 @@
 ### Autostart applications    
     # Autostart applications, per workspace
-    # exec swaymsg "workspace 3; exec spotify;"
     exec swaymsg "workspace 1; exec $term -e 'btm';"
+    exec swaymsg "workspace 1; exec $term -e 'ncspot';"
     exec swaymsg "exec $webbrowser;"
     exec swaymsg "workspace 1; exec keepassxc;"
 
@@ -28,7 +28,7 @@
     exec wmname LG3D
     
     # Automatic mounts
-    exec udiskie
+    exec udiskie -n --appindicator
 
     # Better tiling
     exec autotiling
@@ -41,6 +41,10 @@
 
     # Shiny LEDs
     exec openrgb --startminimized --profile default
+
+    # Shiny Audio
+    exec easyeffects --gapplication-service
+    exec easyeffects -l EQ
 
     # Indicator for KDEConnect Mobile Phone
     exec /usr/lib/kdeconnectd -platform wayland-egl
