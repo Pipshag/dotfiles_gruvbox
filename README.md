@@ -25,16 +25,16 @@ Screenshot follows after list of items in the bar left to right.
 * Scratchpad widget, **cycles** contents or **sends** to scratch
 * Pacman available updates indicator
 * Idle-inhibitor
+* Media player info, scrpit in **custom_modules**
 ### Middle
 * Workspaces, minimalistic. Configure names in waybar config
 #### Right
 * CPU Governor indicator, script in **custom_modules** can be extended
 * CPU temperature with warning. Opens **htop** in term on click
 * CPU max frequency and usage in percent
-* DISABLED ~~GPU monitoring with frequency, temperature and utilization percentage. Opens [powerupp](https://github.com/azeam/powerupp) on click. Tooltip shows GPU info and Mesa version (from glxinfo).~~
-* Pulseaudio control. Scroll for volume increase/decrease, click for **pavucontrol** or right-click to quickly **mute** microphone.
-* DISABLED ~~Bluetooth indicator, opens **blueberry** on click~~
+* GPU monitoring with ~~frequency~~, temperature and ~~utilization percentage~~. Opens [powerupp](https://github.com/azeam/powerupp) on click. Tooltip shows GPU info and Mesa version (from glxinfo).~~
 * Network indicator with mouse-over info (Strength, IP, Frequency, Speed etc)
+* KDEConnect connection and battery indicator. Click to send **ring** to your unit.
+* DISABLED ~~Bluetooth indicator, opens **blueberry** on click~~
+* Pulseaudio control. Scroll for volume increase/decrease, click for **pavucontrol** or right-click to quickly **mute** microphone.
 * Tray to keep icons
-
-
